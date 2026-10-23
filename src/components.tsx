@@ -3,11 +3,13 @@ import { Menu, MessageCircle, X } from 'lucide-react'
 import { CSSProperties, PropsWithChildren, useEffect, useState } from 'react'
 import { whatsappNumber } from './data'
 
+const siteBase = import.meta.env.BASE_URL
+
 export function Brand({ light = false }: { light?: boolean }) {
   return (
-    <a href="/" className={`brand ${light ? 'brand-light' : ''}`} aria-label="Cordón de Oro, inicio">
+    <a href={siteBase} className={`brand ${light ? 'brand-light' : ''}`} aria-label="Cordón de Oro, inicio">
       <span className="brand-logo-shell">
-        <img src="/assets/logo-mark-gold.png" alt="" aria-hidden="true" />
+        <img src={`${siteBase}assets/logo-mark-gold.png`} alt="" aria-hidden="true" />
         <span className="brand-wordmark"><strong>CORDÓN DE ORO</strong><small>E.I.R.L.</small></span>
       </span>
     </a>
@@ -27,10 +29,10 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const catalogPage = window.location.pathname.replace(/\/+$/, '') === '/productos'
+  const catalogPage = window.location.pathname.replace(/\/+$/, '').endsWith('/productos')
   const navHref = (id: string, page: string) => {
-    if (page === 'catalog') return catalogPage ? `#${id}` : `/productos#${id}`
-    return catalogPage ? `/#${id}` : `#${id}`
+    if (page === 'catalog') return catalogPage ? `#${id}` : `${siteBase}productos#${id}`
+    return catalogPage ? `${siteBase}#${id}` : `#${id}`
   }
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32)
