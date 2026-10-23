@@ -28,11 +28,11 @@ La salida de producción se genera en `dist/`.
 
 ## Logo
 
-El briefing menciona un logo adjunto, pero el archivo no fue incluido. El encabezado usa una marca tipográfica temporal. Cuando se entregue el logo original, debe guardarse en `public/assets/logo-cordon-de-oro.*` y sustituirse en el componente `Brand` sin modificar sus colores ni proporciones.
+El logo oficial en PNG transparente está guardado en `public/assets/logo_cordon-de-oro.png` y se utiliza desde el componente `Brand` en el encabezado y el pie de página. Para reemplazarlo en el futuro, conserva ese nombre de archivo, la transparencia, los colores y las proporciones originales.
 
 ## Imágenes de referencia
 
-Las imágenes incluidas fueron generadas como material demostrativo para este proyecto. No representan trabajos reales ni instalaciones verificadas de la empresa. Se recomienda reemplazarlas por fotografías propias del taller y de pedidos terminados antes del lanzamiento público final.
+Las imágenes incluidas fueron generadas como material demostrativo para este proyecto. Cada servicio y producto tiene su propio archivo dentro de `public/assets/services/` y `public/assets/products/`. No representan trabajos reales ni instalaciones verificadas de la empresa; pueden reemplazarse por fotografías propias conservando los mismos nombres de archivo.
 
 ## Formulario y WhatsApp
 
